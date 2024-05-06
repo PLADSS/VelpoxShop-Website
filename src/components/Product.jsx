@@ -8,7 +8,7 @@ const Info = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.6);
   z-index: 3;
   display: flex;
   align-items: center;
@@ -26,15 +26,15 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #000;
-  box-shadow: 3px 3px 3px #16db4c;
+  background-color: #609966;
+  box-shadow: 3px 3px 3px #40513b;
   border-radius: 50px;
   position: relative;
   flex-direction: column;
 
   &:hover ${Info} {
     opacity: 1;
-    border-radius: 30px;
+    border-radius: 45px;
   }
 `;
 

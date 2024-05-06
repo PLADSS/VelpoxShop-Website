@@ -48,10 +48,13 @@ const Slide = styled.div`
 
   color: #dadde0;
 `;
-
+//#212837;
 const ImgContainer = styled.div`
   height: 70%;
   flex: 1;
+  background-color: #edf1d6;
+  border-radius: 100px;
+  box-shadow: 2px 2px 2px #609966;
 `;
 
 const Image = styled.img`
@@ -77,11 +80,13 @@ const Desc = styled.p`
 const Button = styled.button`
   padding: 10px;
   font-size: 20px;
-  background: linear-gradient(to top right, #000000, #16db4c);
-  color: #bec4c9;
+  background: #609966;
+  color: #dadde0;
   cursor: pointer;
+  border-radius: 15px;
+  border-color: #609966;
   &:hover {
-    background: linear-gradient(to top right, #050505, #5cef84);
+    background: #40513b;
   }
 `;
 

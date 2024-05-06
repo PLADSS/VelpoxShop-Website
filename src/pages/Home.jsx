@@ -6,9 +6,11 @@ import Newsletter from "../components/Newsletter";
 import Products from "../components/Products";
 import Slider from "../components/Slider";
 
+// #0E1117, #2A2D31
+
 const Home = () => {
   return (
-    <div style={{ background: "linear-gradient(to top, #0A2913, #838383)" }}>
+    <div style={{ background: "#9DC08B" }}>
       <Navbar />
       <Slider />
       <Announcement />

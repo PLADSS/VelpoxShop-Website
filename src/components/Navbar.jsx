@@ -7,7 +7,7 @@ import AvertaDemoPE from "../assets/font/AvertaDemoPE-ExtraBold.otf";
 
 const Container = styled.div`
   height: 60px;
-  background-color: #000000;
+  background-color: #40513b;
   ${mobile({ height: "50px" })}
 `;
 
