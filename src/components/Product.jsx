@@ -26,8 +26,8 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #609966;
-  box-shadow: 3px 3px 3px #40513b;
+  background-color: #e6f7ef;
+  box-shadow: 4px 0px 2px 0px rgba(64, 81, 59, 0.5);
   border-radius: 50px;
   position: relative;
   flex-direction: column;
@@ -86,7 +86,6 @@ const Icon = styled.div`
 const Product = ({ item }) => {
   return (
     <Container>
-      <Title>Sa</Title>
       <Circle>
         <Image src={item.img} />
       </Circle>

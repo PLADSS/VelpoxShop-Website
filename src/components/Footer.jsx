@@ -7,8 +7,8 @@ import { mobile } from "../responsive";
 const Container = styled.div`
   display: flex;
   ${mobile({ flexDirection: "column" })}
-  background-color: #40513B;
-  color: #dadde0;
+  background-color: #F5F5F7;
+  color: #141414;
 `;
 
 const Left = styled.div`
@@ -54,7 +54,7 @@ const Footer = () => {
   return (
     <Container>
       <Left>
-        <Logo style={{ color: "white" }}>
+        <Logo style={{ color: "#141414" }}>
           VEL<span style={{ color: "#15DB4C" }}>POX SH</span>OP
         </Logo>
         <Desc>Hız, Güven, Kalite</Desc>
@@ -66,17 +66,19 @@ const Footer = () => {
           <Payment
             src={DiscordLogo}
             style={{
-              background: "linear-gradient(to bottom , #030712, #301991)",
+              background: "transparent",
+              borderRadius: "15px",
               width: "3em",
-              paddingLeft: "1em",
-              paddingRight: "1em",
+              paddingLeft: "0.5em",
+              paddingRight: "0.5em",
               height: "3em",
               marginLeft: "1em",
             }}
           />
           <MailOutline
             style={{
-              background: " linear-gradient(to bottom , #000000, #3D9CF5)",
+              background: " transparent",
+              borderRadius: "15px",
               width: "2em",
               height: "2em",
               paddingLeft: "0.5em",
@@ -87,9 +89,10 @@ const Footer = () => {
           <Payment
             src={InstagramLogo}
             style={{
-              background: " linear-gradient(to bottom , #030712, #FE016F)",
-              width: "3em",
-              height: "3em",
+              background: " transparent",
+              borderRadius: "15px",
+              width: "40px",
+              height: "40px",
               paddingLeft: "0.5em",
               paddingRight: "0.5em",
               marginLeft: "1em",

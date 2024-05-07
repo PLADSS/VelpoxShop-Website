@@ -7,7 +7,7 @@ import AvertaDemoPE from "../assets/font/AvertaDemoPE-ExtraBold.otf";
 
 const Container = styled.div`
   height: 60px;
-  background-color: #40513b;
+  background-color: transparent;
   ${mobile({ height: "50px" })}
 `;
 
@@ -73,18 +73,18 @@ const Navbar = () => {
     <Container>
       <Wrapper>
         <Left>
-          <Language style={{ color: "white" }}>TR</Language>
+          <Language style={{ color: "#141414" }}>TR</Language>
           <SearchContainer style={{ background: "white" }}>
             <Input placeholder="Search" />
             <Search style={{ color: "gray", fontSize: 16 }} />
           </SearchContainer>
         </Left>
         <Center>
-          <Logo style={{ color: "white", fontFamily: AvertaDemoPE }}>
+          <Logo style={{ color: "#141414", fontFamily: AvertaDemoPE }}>
             VEL<span style={{ color: "#15DB4C" }}>POX SH</span>OP
           </Logo>
         </Center>
-        <Right style={{ color: "white" }}>
+        <Right style={{ color: "#141414" }}>
           <MenuItem>Kayıt Ol</MenuItem>
           <MenuItem>Giriş Yap</MenuItem>
           <MenuItem>

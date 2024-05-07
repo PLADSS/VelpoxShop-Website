@@ -3,13 +3,14 @@ import { useState } from "react";
 import styled from "styled-components";
 import { sliderItems } from "../data";
 import { mobile } from "../responsive";
+import React from "react";
 
 const Container = styled.div`
   width: 100%;
   height: 100vh;
   display: flex;
   position: relative;
-  box-shadow: 3px 3px 3px #16db4c;
+  background-color: #f5f5f5;
   overflow: hidden;
   ${mobile({ display: "none" })}
 `;
@@ -17,7 +18,7 @@ const Container = styled.div`
 const Arrow = styled.div`
   width: 50px;
   height: 50px;
-  background-color: #fff7f7;
+  background-color: #83f3bd;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -46,13 +47,13 @@ const Slide = styled.div`
   display: flex;
   align-items: center;
 
-  color: #dadde0;
+  color: #141414;
 `;
 //#212837;
 const ImgContainer = styled.div`
   height: 70%;
   flex: 1;
-  background-color: #edf1d6;
+  background-color: #42b078;
   border-radius: 100px;
   box-shadow: 2px 2px 2px #609966;
 `;
@@ -80,15 +81,18 @@ const Desc = styled.p`
 const Button = styled.button`
   padding: 10px;
   font-size: 20px;
-  background: #609966;
-  color: #dadde0;
+  background: #42b078;
+  color: #060907;
   cursor: pointer;
   border-radius: 15px;
-  border-color: #609966;
+  border-color: #faf1e6;
   &:hover {
-    background: #40513b;
+    background: #5ee181;
   }
 `;
+const handleScrollToProducts = () => {
+  window.scrollBy({ top: 800, behavior: "smooth" });
+};
 
 const Slider = () => {
   const [slideIndex, setSlideIndex] = useState(0);
@@ -114,7 +118,7 @@ const Slider = () => {
             <InfoContainer>
               <Title>{item.title}</Title>
               <Desc>{item.desc}</Desc>
-              <Button>SHOW NOW</Button>
+              <Button onClick={handleScrollToProducts}>Mağzaya git</Button>
             </InfoContainer>
           </Slide>
         ))}

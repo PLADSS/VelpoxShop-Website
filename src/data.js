@@ -14,17 +14,17 @@ import discordMenu from "./assets/discordMenu.png";
 export const sliderItems = [
     {
       id: 1,
-      img: discordMenu,
-      title: "Güvenli Alışveriş",
-      desc: "Sipariş Sonrası Takip , Güvenli Ödeme , Hızlı Teslim",
-      bg: "f5fafd",
+      img: discordSunucu,
+      title: "Binlerce Kişilik Discord Sunucuları",
+      desc: "Binlerce gerçek insandan oluşan, discord sunucularından birine sahip olun ",
+      bg: "fcf1ed",
     },
     {
       id: 2,
-      img: discordSunucu,
-      title: "Discord Sunucusu",
-      desc: "Gerçek insanlardan oluşan discord sunucuları ",
-      bg: "fcf1ed",
+      img: discordNitro,
+      title: "Discord Nitro",
+      desc: "Discord Nitro satışımız ile çok ucuza sunucunuzu takviye edin yahut kendiniz kullanın",
+      bg: "fbf0f4",
     },
     {
       id: 3,
@@ -32,6 +32,10 @@ export const sliderItems = [
       title: "Discord Nitro",
       desc: "Discord Nitro ile ister Sunucunuzu Boostlayın ister Nitro avantajlarından yararlanın",
       bg: "fbf0f4",
+      img: discordMenu,
+      title: "Güvenli Alışveriş",
+      desc: "Sipariş Sonrası Takip , Güvenli Ödeme , Hızlı Teslim",
+      bg: "f5fafd",
     },
   ];
 

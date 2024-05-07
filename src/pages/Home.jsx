@@ -10,7 +10,7 @@ import Slider from "../components/Slider";
 
 const Home = () => {
   return (
-    <div style={{ background: "#9DC08B" }}>
+    <div style={{ background: "#FBFDFB" }}>
       <Navbar />
       <Slider />
       <Announcement />
