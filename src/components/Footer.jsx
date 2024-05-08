@@ -1,3 +1,4 @@
+import React from "react";
 import { MailOutline } from "@material-ui/icons";
 import DiscordLogo from "../assets/logo/discord-logo.png";
 import InstagramLogo from "../assets/logo/instagram.png";
@@ -9,7 +10,6 @@ const Container = styled.div`
   display: flex;
   ${mobile({ flexDirection: "column" })}
   background-color: var(--primary-Homebg-color);
-  color: #141414;
   color: var(--primary-text-color);
 `;
 
@@ -48,6 +48,10 @@ const ContactItem = styled.div`
   display: flex;
 `;
 
+const PaymentLink = styled.a`
+  margin-left: 1em;
+`;
+
 const Payment = styled.img`
   width: 50%;
 `;
@@ -65,42 +69,47 @@ const Footer = () => {
       <Right>
         <Title>Contact</Title>
         <ContactItem>
-          <Payment
-            src={DiscordLogo}
-            style={{
-              background: "transparent",
-              borderRadius: "15px",
-              width: "40px",
-              height: "40px",
-              paddingLeft: "0.5em",
-              paddingRight: "0.5em",
+          <PaymentLink href="discord.gg/velpoxshop">
+            <Payment
+              src={DiscordLogo}
+              alt="Discord Logo"
+              style={{
+                background: "transparent",
+                borderRadius: "15px",
+                width: "40px",
+                height: "40px",
+                paddingLeft: "0.5em",
+                paddingRight: "0.5em",
+              }}
+            />
+          </PaymentLink>
+          <PaymentLink href="mailto: ">
+            <MailOutline
+              style={{
+                background: "transparent",
+                borderRadius: "15px",
+                width: "40px",
+                height: "40px",
+                paddingLeft: "0.5em",
+                paddingRight: "0.5em",
+              }}
+            />
+          </PaymentLink>
 
-              marginLeft: "1em",
-            }}
-          />
-          <MailOutline
-            style={{
-              background: " transparent",
-              borderRadius: "15px",
-              width: "40px",
-              height: "40px",
-              paddingLeft: "0.5em",
-              paddingRight: "0.5em",
-              marginLeft: "1em",
-            }}
-          />
-          <Payment
-            src={InstagramLogo}
-            style={{
-              background: " transparent",
-              borderRadius: "15px",
-              width: "50px",
-              height: "40px",
-              paddingLeft: "0.5em",
-              paddingRight: "0.5em",
-              marginLeft: "1em",
-            }}
-          />
+          <PaymentLink href="https://www.instagram.com/ensarkaraoglann/">
+            <Payment
+              src={InstagramLogo}
+              alt="Instagram Logo"
+              style={{
+                background: "transparent",
+                borderRadius: "15px",
+                width: "50px",
+                height: "40px",
+                paddingLeft: "0.5em",
+                paddingRight: "0.5em",
+              }}
+            />
+          </PaymentLink>
         </ContactItem>
       </Right>
     </Container>

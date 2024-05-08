@@ -1,17 +1,21 @@
 import styled from "styled-components";
 import { mobile } from "../responsive";
 import bg01 from "../assets/bg01.png";
+import Navbar2 from "../components/Navbar2";
 import "../app.css";
+
+const PageContainer = styled.div`
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.1)
+    ),
+    url(${bg01}) center center;
+`;
 
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
   color: var(--primary-text-color);
-  background: linear-gradient(
-      rgba(255, 255, 255, 0.3),
-      rgba(255, 255, 255, 0.3)
-    ),
-    url(${bg01}) center;
   background-size: cover;
   display: flex;
   align-items: center;
@@ -63,18 +67,21 @@ const Link = styled.a`
 
 const Login = () => {
   return (
-    <Container>
-      <Wrapper>
-        <Title>Giriş Yap</Title>
-        <Form>
-          <Input placeholder="Kullanıcı Adı" />
-          <Input placeholder="Şifre" />
-          <Button>Giriş</Button>
-          <Link>Şifremi Unuttum</Link>
-          <Link>Yeni Hesap Oluştur</Link>
-        </Form>
-      </Wrapper>
-    </Container>
+    <PageContainer>
+      <Navbar2 />
+      <Container>
+        <Wrapper>
+          <Title>Giriş Yap</Title>
+          <Form>
+            <Input placeholder="Kullanıcı Adı" />
+            <Input placeholder="Şifre" />
+            <Button>Giriş</Button>
+            <Link>Şifremi Unuttum</Link>
+            <Link>Yeni Hesap Oluştur</Link>
+          </Form>
+        </Wrapper>
+      </Container>
+    </PageContainer>
   );
 };
 
