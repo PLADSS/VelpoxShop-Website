@@ -1,19 +1,22 @@
 import styled from "styled-components";
 import { mobile } from "../responsive";
+import Navbar2 from "../components/Navbar2";
 import bg02 from "../assets/bg02.png";
 
+const PageContainer = styled.div`
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.1)
+    ),
+    url(${bg02}) center center;
+`;
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
   color: var(--primary-text-color);
-  background: linear-gradient(
-      rgba(255, 255, 255, 0.3),
-      rgba(255, 255, 255, 0.3)
-    ),
-    url(${bg02}) center;
-      center;
   background-size: cover;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 `;
@@ -59,28 +62,31 @@ const Button = styled.button`
 
 const Register = () => {
   return (
-    <Container>
-      <Wrapper>
-        <Title>Hesap Oluştur</Title>
-        <Form>
-          <Input placeholder="Kullanıcı Adı" />
-          <Input placeholder="email" />
-          <div>
-            <Input placeholder="Şifre" />
-            <Input
-              style={{ marginRight: 0 }}
-              placeholder="Şifreyi Tekrar Gir"
-            />
-          </div>
+    <PageContainer>
+      <Navbar2 />
+      <Container>
+        <Wrapper>
+          <Title>Hesap Oluştur</Title>
+          <Form>
+            <Input placeholder="Kullanıcı Adı" />
+            <Input placeholder="email" />
+            <div>
+              <Input placeholder="Şifre" />
+              <Input
+                style={{ marginRight: 0 }}
+                placeholder="Şifreyi Tekrar Gir"
+              />
+            </div>
 
-          <Agreement>
-            Kişisel verilerimin <b>GİZLİLİK POLİTİKASI</b>'na uygun olarak
-            işlenmesine onay veriyorum
-          </Agreement>
-          <Button>Oluştur</Button>
-        </Form>
-      </Wrapper>
-    </Container>
+            <Agreement>
+              Kişisel verilerimin <b>GİZLİLİK POLİTİKASI</b>'na uygun olarak
+              işlenmesine onay veriyorum
+            </Agreement>
+            <Button>Oluştur</Button>
+          </Form>
+        </Wrapper>
+      </Container>
+    </PageContainer>
   );
 };
 

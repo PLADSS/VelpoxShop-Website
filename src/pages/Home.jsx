@@ -15,9 +15,6 @@ const Home = () => {
   return (
     <div style={{ background: "var(--primary-Homebg-color)" }}>
       <Navbar />
-
-      <Register />
-      <Login />
       <Slider />
       <Announcement />
       <Products />

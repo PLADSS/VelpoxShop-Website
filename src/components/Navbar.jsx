@@ -1,4 +1,5 @@
 import { Badge } from "@material-ui/core";
+import { Link } from "react-router-dom";
 import { Search, ShoppingCartOutlined } from "@material-ui/icons";
 import React from "react";
 import styled from "styled-components";
@@ -81,24 +82,24 @@ const Moon = styled.img`
   cursor: pointer;
 `;
 
-const handleDarkModeToggle = () => {
-  const body = document.body;
-  const MoonButton = document.getElementById("moon");
-
-  // Dark theme kontrolü
-  const isDarkTheme = body.classList.contains("dark-theme");
-
-  // Dark theme varsa kaldır, yoksa ekle
-  if (isDarkTheme) {
-    body.classList.remove("dark-theme");
-    MoonButton.src = moon;
-  } else {
-    body.classList.add("dark-theme");
-    MoonButton.src = sun;
-  }
-};
-
 const Navbar = () => {
+  const handleDarkModeToggle = () => {
+    const body = document.body;
+    const MoonButton = document.getElementById("moon");
+
+    // Dark theme kontrolü
+    const isDarkTheme = body.classList.contains("dark-theme");
+
+    // Dark theme varsa kaldır, yoksa ekle
+    if (isDarkTheme) {
+      body.classList.remove("dark-theme");
+      MoonButton.src = moon;
+    } else {
+      body.classList.add("dark-theme");
+      MoonButton.src = sun;
+    }
+  };
+
   return (
     <Container>
       <Wrapper>
@@ -121,8 +122,12 @@ const Navbar = () => {
           </Logo>
         </Center>
         <Right style={{ color: "#141414" }}>
-          <MenuItem>Kayıt Ol</MenuItem>
-          <MenuItem>Giriş Yap</MenuItem>
+          <Link to="/register" style={{ textDecoration: "none" }}>
+            <MenuItem>Kayıt Ol</MenuItem>
+          </Link>
+          <Link to="/login" style={{ textDecoration: "none" }}>
+            <MenuItem>Giriş Yap</MenuItem>
+          </Link>
 
           <MenuItem>
             <Badge badgeContent={0} color="primary">
