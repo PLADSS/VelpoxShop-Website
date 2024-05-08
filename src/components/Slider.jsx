@@ -1,24 +1,26 @@
 import { ArrowLeftOutlined, ArrowRightOutlined } from "@material-ui/icons";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import { sliderItems } from "../data";
 import { mobile } from "../responsive";
-import React from "react";
+import "../app.css";
 
 const Container = styled.div`
   width: 100%;
   height: 100vh;
   display: flex;
   position: relative;
-  background-color: #f5f5f5;
+  background-color: var(--primary-Sliderbg-color);
   overflow: hidden;
   ${mobile({ display: "none" })}
+  justify-content: space-between; /* Align arrows to the left and right edges */
+  align-items: center; /* Center vertically */
 `;
 
 const Arrow = styled.div`
   width: 50px;
   height: 50px;
-  background-color: #83f3bd;
+  background-color: var(--primary-Button-color);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -38,7 +40,7 @@ const Wrapper = styled.div`
   height: 100%;
   display: flex;
   transition: all 1.5s ease;
-  transform: translateX(${(props) => props.slideIndex * -100}vw);
+  transform: translateX(${(props) => props.translateValue}px);
 `;
 
 const Slide = styled.div`
@@ -46,16 +48,15 @@ const Slide = styled.div`
   height: 100vh;
   display: flex;
   align-items: center;
-
-  color: #141414;
+  color: var(--primary-text-color);
 `;
-//#212837;
+
 const ImgContainer = styled.div`
   height: 70%;
   flex: 1;
-  background-color: #42b078;
+  background-color: var(--primary-BG-color);
   border-radius: 100px;
-  box-shadow: 2px 2px 2px #609966;
+  box-shadow: 4px 0px 2px 0px rgba(64, 81, 59, 0.5);
 `;
 
 const Image = styled.img`
@@ -68,39 +69,51 @@ const InfoContainer = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 70px;
+  font-size: 60px;
 `;
 
 const Desc = styled.p`
   margin: 50px 0px;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
   letter-spacing: 3px;
 `;
 
 const Button = styled.button`
   padding: 10px;
-  font-size: 20px;
-  background: #42b078;
+  font-size: 18px;
+  background-color: var(--primary-Button-color);
+  box-shadow: 2px 0px 2px 0px rgba(64, 81, 59, 0.5);
   color: #060907;
   cursor: pointer;
   border-radius: 15px;
   border-color: #faf1e6;
   &:hover {
-    background: #5ee181;
+    background: #8db7dc;
+    border-color: #2c6292;
   }
 `;
-const handleScrollToProducts = () => {
-  window.scrollBy({ top: 800, behavior: "smooth" });
-};
 
 const Slider = () => {
-  const [slideIndex, setSlideIndex] = useState(0);
+  const [translateValue, setTranslateValue] = useState(0);
+  const slideIndex = useRef(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleClick("right");
+    }, 5000); // 5 sn
+
+    return () => clearInterval(interval);
+  }, []);
+
   const handleClick = (direction) => {
+    const width = window.innerWidth;
     if (direction === "left") {
-      setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2);
+      slideIndex.current = slideIndex.current > 0 ? slideIndex.current - 1 : 2;
+      setTranslateValue(-slideIndex.current * width);
     } else {
-      setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
+      slideIndex.current = slideIndex.current < 2 ? slideIndex.current + 1 : 0;
+      setTranslateValue(-slideIndex.current * width);
     }
   };
 
@@ -109,7 +122,7 @@ const Slider = () => {
       <Arrow direction="left" onClick={() => handleClick("left")}>
         <ArrowLeftOutlined />
       </Arrow>
-      <Wrapper slideIndex={slideIndex}>
+      <Wrapper translateValue={translateValue}>
         {sliderItems.map((item) => (
           <Slide bg={item.bg} key={item.id}>
             <ImgContainer>
@@ -118,7 +131,7 @@ const Slider = () => {
             <InfoContainer>
               <Title>{item.title}</Title>
               <Desc>{item.desc}</Desc>
-              <Button onClick={handleScrollToProducts}>Mağzaya git</Button>
+              <Button>Ürünleri Gör</Button>
             </InfoContainer>
           </Slide>
         ))}

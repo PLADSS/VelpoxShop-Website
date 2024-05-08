@@ -9,13 +9,24 @@ import image8 from './assets/8.png';
 import image9 from './assets/9.png';
 import discordNitro from "./assets/discord-nitro.png";
 import discordSunucu from "./assets/discordSunucu.png";
-import discordMenu from "./assets/discordMenu.png";
+import discordMenu from "./assets/discordMenu.png"; 
+import styled from "styled-components";
+
+const DiscordBlue = styled.span`
+  color: #669ed1;
+`;
+const Title = styled.div``;
 
 export const sliderItems = [
     {
       id: 1,
       img: discordSunucu,
-      title: "Binlerce Kişilik Discord Sunucuları",
+      title: (
+        <Title>
+          Binlerce Kişilik{' '}
+          <DiscordBlue>Discord</DiscordBlue> Sunucuları
+        </Title>
+      ),
       desc: "Binlerce gerçek insandan oluşan, discord sunucularından birine sahip olun ",
       bg: "fcf1ed",
     },

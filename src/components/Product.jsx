@@ -1,5 +1,6 @@
 import { ShoppingCartOutlined, Title } from "@material-ui/icons";
 import styled from "styled-components";
+import "../app.css";
 
 const Info = styled.div`
   opacity: 0;
@@ -26,7 +27,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #e6f7ef;
+  background-color: var(--primary-BG-color);
   box-shadow: 4px 0px 2px 0px rgba(64, 81, 59, 0.5);
   border-radius: 50px;
   position: relative;

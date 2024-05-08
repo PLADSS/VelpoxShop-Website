@@ -1,15 +1,17 @@
 import styled from "styled-components";
-import {mobile} from "../responsive";
+import { mobile } from "../responsive";
+import bg01 from "../assets/bg01.png";
+import "../app.css";
 
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
+  color: var(--primary-text-color);
   background: linear-gradient(
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.5)
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.3)
     ),
-    url("https://images.pexels.com/photos/6984650/pexels-photo-6984650.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
-      center;
+    url(${bg01}) center;
   background-size: cover;
   display: flex;
   align-items: center;
@@ -18,13 +20,14 @@ const Container = styled.div`
 
 const Wrapper = styled.div`
   width: 25%;
+  border-radius: 16px;
   padding: 20px;
-  background-color: white;
+  background-color: var(--primary-Homebg-color);
   ${mobile({ width: "75%" })}
 `;
 
 const Title = styled.h1`
-  font-size: 24px;
+  font-size: 42px;
   font-weight: 300;
 `;
 
@@ -44,7 +47,8 @@ const Button = styled.button`
   width: 40%;
   border: none;
   padding: 15px 20px;
-  background-color: teal;
+  background-color: var(--primary-Button-color);
+  border-radius: 60px;
   color: white;
   cursor: pointer;
   margin-bottom: 10px;
@@ -61,13 +65,13 @@ const Login = () => {
   return (
     <Container>
       <Wrapper>
-        <Title>SIGN IN</Title>
+        <Title>Giriş Yap</Title>
         <Form>
-          <Input placeholder="username" />
-          <Input placeholder="password" />
-          <Button>LOGIN</Button>
-          <Link>DO NOT YOU REMEMBER THE PASSWORD?</Link>
-          <Link>CREATE A NEW ACCOUNT</Link>
+          <Input placeholder="Kullanıcı Adı" />
+          <Input placeholder="Şifre" />
+          <Button>Giriş</Button>
+          <Link>Şifremi Unuttum</Link>
+          <Link>Yeni Hesap Oluştur</Link>
         </Form>
       </Wrapper>
     </Container>

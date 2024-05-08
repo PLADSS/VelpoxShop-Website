@@ -4,10 +4,13 @@ import React from "react";
 import styled from "styled-components";
 import { mobile } from "../responsive";
 import AvertaDemoPE from "../assets/font/AvertaDemoPE-ExtraBold.otf";
+import moon from "../assets/logo/moon.png";
+import sun from "../assets/logo/sun.png";
+import "../app.css";
 
 const Container = styled.div`
   height: 60px;
-  background-color: transparent;
+  background-color: var(--primary-Homebg-color);
   ${mobile({ height: "50px" })}
 `;
 
@@ -28,6 +31,7 @@ const Left = styled.div`
 const Language = styled.span`
   font-size: 14px;
   cursor: pointer;
+  color: var(--primary-text-color);
   ${mobile({ display: "none" })}
 `;
 
@@ -50,7 +54,8 @@ const Center = styled.div`
 `;
 
 const Logo = styled.h1`
-  font-family: AvertaDemoPE;
+  color: var(--primary-text-color);
+  font-family: "AvertaDemoPE", sans-serif;
   ${mobile({ fontSize: "24px" })}
 `;
 const Right = styled.div`
@@ -63,30 +68,62 @@ const Right = styled.div`
 
 const MenuItem = styled.div`
   font-size: 14px;
+  color: var(--primary-text-color);
   cursor: pointer;
   margin-left: 25px;
   ${mobile({ fontSize: "12px", marginLeft: "10px" })}
 `;
+
+const Moon = styled.img`
+  margin-left: 25px;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+`;
+
+const handleDarkModeToggle = () => {
+  const body = document.body;
+  const MoonButton = document.getElementById("moon");
+
+  // Dark theme kontrolü
+  const isDarkTheme = body.classList.contains("dark-theme");
+
+  // Dark theme varsa kaldır, yoksa ekle
+  if (isDarkTheme) {
+    body.classList.remove("dark-theme");
+    MoonButton.src = moon;
+  } else {
+    body.classList.add("dark-theme");
+    MoonButton.src = sun;
+  }
+};
 
 const Navbar = () => {
   return (
     <Container>
       <Wrapper>
         <Left>
-          <Language style={{ color: "#141414" }}>TR</Language>
+          <Language>TR</Language>
           <SearchContainer style={{ background: "white" }}>
             <Input placeholder="Search" />
             <Search style={{ color: "gray", fontSize: 16 }} />
           </SearchContainer>
+          <Moon
+            id="moon"
+            onClick={handleDarkModeToggle}
+            src={moon}
+            alt="Moon Logo"
+          />
         </Left>
         <Center>
-          <Logo style={{ color: "#141414", fontFamily: AvertaDemoPE }}>
+          <Logo style={{ fontFamily: AvertaDemoPE }}>
             VEL<span style={{ color: "#15DB4C" }}>POX SH</span>OP
           </Logo>
         </Center>
         <Right style={{ color: "#141414" }}>
           <MenuItem>Kayıt Ol</MenuItem>
           <MenuItem>Giriş Yap</MenuItem>
+
           <MenuItem>
             <Badge badgeContent={0} color="primary">
               <ShoppingCartOutlined />

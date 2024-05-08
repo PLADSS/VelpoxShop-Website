@@ -3,12 +3,14 @@ import DiscordLogo from "../assets/logo/discord-logo.png";
 import InstagramLogo from "../assets/logo/instagram.png";
 import styled from "styled-components";
 import { mobile } from "../responsive";
+import "../app.css";
 
 const Container = styled.div`
   display: flex;
   ${mobile({ flexDirection: "column" })}
-  background-color: #F5F5F7;
+  background-color: var(--primary-Homebg-color);
   color: #141414;
+  color: var(--primary-text-color);
 `;
 
 const Left = styled.div`
@@ -54,7 +56,7 @@ const Footer = () => {
   return (
     <Container>
       <Left>
-        <Logo style={{ color: "#141414" }}>
+        <Logo>
           VEL<span style={{ color: "#15DB4C" }}>POX SH</span>OP
         </Logo>
         <Desc>Hız, Güven, Kalite</Desc>
@@ -68,10 +70,11 @@ const Footer = () => {
             style={{
               background: "transparent",
               borderRadius: "15px",
-              width: "3em",
+              width: "40px",
+              height: "40px",
               paddingLeft: "0.5em",
               paddingRight: "0.5em",
-              height: "3em",
+
               marginLeft: "1em",
             }}
           />
@@ -79,8 +82,8 @@ const Footer = () => {
             style={{
               background: " transparent",
               borderRadius: "15px",
-              width: "2em",
-              height: "2em",
+              width: "40px",
+              height: "40px",
               paddingLeft: "0.5em",
               paddingRight: "0.5em",
               marginLeft: "1em",
@@ -91,7 +94,7 @@ const Footer = () => {
             style={{
               background: " transparent",
               borderRadius: "15px",
-              width: "40px",
+              width: "50px",
               height: "40px",
               paddingLeft: "0.5em",
               paddingRight: "0.5em",
