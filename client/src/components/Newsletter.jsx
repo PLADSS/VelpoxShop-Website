@@ -10,7 +10,7 @@ const Newsletter = () => {
       <Desc>Soru ve Görüşleriniz için bize ulaşabilirsiniz</Desc>
       <InputContainer>
         <Input placeholder=" Email" />
-        <Button>
+        <Button href="mailto:velpoxshop@gmail.com" target="_blank">
           <Send />
         </Button>
       </InputContainer>

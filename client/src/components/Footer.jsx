@@ -19,7 +19,7 @@ const Footer = () => {
       <Right>
         <Title>Contact</Title>
         <ContactItem>
-          <PaymentLink href="discord.gg/velpoxshop">
+          <PaymentLink href="https://discord.gg/JwvjJdjX" target="_blank">
             <Payment
               src={DiscordLogo}
               alt="Discord Logo"
@@ -33,7 +33,7 @@ const Footer = () => {
               }}
             />
           </PaymentLink>
-          <PaymentLink href="mailto: ">
+          <PaymentLink href="mailto:velpoxshop@gmail.com" target="_blank">
             <MailOutline
               style={{
                 background: "transparent",
@@ -46,7 +46,10 @@ const Footer = () => {
             />
           </PaymentLink>
 
-          <PaymentLink href="https://www.instagram.com/ensarkaraoglann/">
+          <PaymentLink
+            href="https://www.instagram.com/ensarkaraoglann/"
+            target="_blank"
+          >
             <Payment
               src={InstagramLogo}
               alt="Instagram Logo"

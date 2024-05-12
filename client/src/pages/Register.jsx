@@ -3,20 +3,48 @@ import { mobile } from "../responsive";
 import Navbar2 from "../components/Navbar2";
 import bg02 from "../assets/bg02.png";
 import { useState } from "react";
+import axios from "axios";
+import { toast } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 //
 // Register Page
 //
 
 const Register = () => {
+  const navigate = useNavigate();
   const [data, setData] = useState({
     username: "",
     email: "",
     password: "",
+    confirmPassword: "",
   });
 
-  const registerUser = (e) => {
+  const registerUser = async (e) => {
     e.preventDefault();
+    const { username, email, password } = data;
+    try {
+      const { data } = await axios.post("/register", {
+        username,
+        email,
+        password,
+      });
+      if (data.error) {
+        toast.error(data.error);
+      } else {
+        setData({});
+        toast.success("Hesap Oluşturuldu");
+        navigate("/login");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+
+    if (data.password !== data.confirmPassword) {
+      alert("Şifreler eşleşmiyor!");
+      return;
+    }
+    // Kayıt işlemi burada gerçekleştirilebilir
   };
 
   return (
@@ -30,17 +58,28 @@ const Register = () => {
               type="text"
               placeholder="Kullanıcı Adı"
               value={data.username}
+              onChange={(e) => setData({ ...data, username: e.target.value })}
             />
-            <Input type="email" placeholder="email" value={data.email} />
+            <Input
+              type="email"
+              placeholder="email"
+              value={data.email}
+              onChange={(e) => setData({ ...data, email: e.target.value })}
+            />
             <div>
               <Input
                 type="password"
                 placeholder="Şifre"
                 value={data.password}
+                onChange={(e) => setData({ ...data, password: e.target.value })}
               />
               <Input
-                style={{ marginRight: 0 }}
-                placeholder="Şifreyi Tekrar Gir"
+                type="password"
+                placeholder="Şifre Tekrar"
+                value={data.confirmPassword}
+                onChange={(e) =>
+                  setData({ ...data, confirmPassword: e.target.value })
+                }
               />
             </div>
 

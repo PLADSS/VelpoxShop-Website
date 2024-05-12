@@ -17,6 +17,13 @@ const Slider = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const scrollToPosition = () => {
+    window.scrollTo({
+      top: window.scrollY + 700,
+      behavior: "smooth",
+    });
+  };
+
   const handleClick = (direction) => {
     const width = window.innerWidth;
     if (direction === "left") {
@@ -42,7 +49,7 @@ const Slider = () => {
             <InfoContainer>
               <Title>{item.title}</Title>
               <Desc>{item.desc}</Desc>
-              <Button>Ürünleri Gör</Button>
+              <Button onClick={scrollToPosition}>Ürünleri Gör</Button>
             </InfoContainer>
           </Slide>
         ))}

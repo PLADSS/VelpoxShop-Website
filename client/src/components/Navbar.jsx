@@ -27,6 +27,13 @@ const Navbar = () => {
     }
   };
 
+  const scrollToPosition = () => {
+    window.scrollTo({
+      top: window.scrollY + 700,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <Container>
       <Wrapper>
@@ -57,8 +64,8 @@ const Navbar = () => {
           </Link>
 
           <MenuItem>
-            <Badge badgeContent={0} color="primary">
-              <ShoppingCartOutlined />
+            <Badge>
+              <ShoppingCartOutlined onClick={scrollToPosition} />
             </Badge>
           </MenuItem>
         </Right>

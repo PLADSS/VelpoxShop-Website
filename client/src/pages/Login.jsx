@@ -4,12 +4,19 @@ import bg01 from "../assets/bg01.png";
 import Navbar2 from "../components/Navbar2";
 import "../app.css";
 import { useState } from "react";
+import axios from "axios";
 
-//Login Page
-const loginUser = (e) => {
-  e.preventDefault();
-};
 const Login = () => {
+  //Login Page
+  const loginUser = (e) => {
+    e.preventDefault();
+    axios.get("/");
+  };
+
+  const [data, setData] = useState({
+    username: "",
+    password: "",
+  });
   return (
     <PageContainer>
       <Navbar2 />
@@ -17,8 +24,18 @@ const Login = () => {
         <Wrapper>
           <Title>Giriş Yap</Title>
           <Form onSubmit={loginUser}>
-            <Input type="text" placeholder="Kullanıcı Adı" />
-            <Input type="password" placeholder="Şifre" />
+            <Input
+              type="text"
+              placeholder="Kullanıcı Adı"
+              value={data.username}
+              onChange={(e) => setData({ ...data, username: e.target.value })}
+            />
+            <Input
+              type="password"
+              placeholder="Şifre"
+              value={data.password}
+              onChange={(e) => setData({ ...data, password: e.target.value })}
+            />
             <Button>Giriş</Button>
             <Link>Şifremi Unuttum</Link>
             <Link>Yeni Hesap Oluştur</Link>
