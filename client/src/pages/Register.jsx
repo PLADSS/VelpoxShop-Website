@@ -40,10 +40,6 @@ const Register = () => {
       console.log(error);
     }
 
-    if (data.password !== data.confirmPassword) {
-      alert("Şifreler eşleşmiyor!");
-      return;
-    }
     // Kayıt işlemi burada gerçekleştirilebilir
   };
 

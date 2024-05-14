@@ -5,18 +5,38 @@ import Navbar2 from "../components/Navbar2";
 import "../app.css";
 import { useState } from "react";
 import axios from "axios";
+import { toast } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  //Login Page
-  const loginUser = (e) => {
-    e.preventDefault();
-    axios.get("/");
-  };
-
+  const navigate = useNavigate();
   const [data, setData] = useState({
     username: "",
     password: "",
   });
+  //Login Page
+  const loginUser = async (e) => {
+    e.preventDefault();
+    const { username, password } = data;
+    try {
+      const { data } = await axios.post("/login", {
+        username,
+        password,
+      });
+      if (data.error) {
+        toast.error(data.error);
+      } else {
+        // Girdikten sonra sıfırla
+        setData({ username: "", password: "" });
+        navigate("/home");
+      }
+    } catch (error) {
+      // Hata ayıkla
+      console.error("Bağlanırken hata:", error);
+      toast.error("Bir hata oluştu.");
+    }
+  };
+
   return (
     <PageContainer>
       <Navbar2 />
@@ -37,7 +57,6 @@ const Login = () => {
               onChange={(e) => setData({ ...data, password: e.target.value })}
             />
             <Button>Giriş</Button>
-            <Link>Şifremi Unuttum</Link>
             <Link>Yeni Hesap Oluştur</Link>
           </Form>
         </Wrapper>
