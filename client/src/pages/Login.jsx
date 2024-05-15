@@ -28,7 +28,7 @@ const Login = () => {
       } else {
         // Girdikten sonra sıfırla
         setData({ username: "", password: "" });
-        navigate("/home");
+        navigate("/");
       }
     } catch (error) {
       // Hata ayıkla
