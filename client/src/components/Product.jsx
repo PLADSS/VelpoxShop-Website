@@ -9,7 +9,8 @@ const Product = ({ item }) => {
         <Image src={item.img} />
       </Circle>
       <Info>
-        <Icon>
+        <Script>{item.title}</Script>
+        <Icon href="https://discord.gg/JwvjJdjX" target="_blank">
           <ShoppingCartOutlined />
         </Icon>
       </Info>
@@ -29,6 +30,7 @@ const Info = styled.div`
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 3;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   transition: all 0.5s ease;
@@ -85,7 +87,7 @@ const Image = styled.div`
   background-size: cover; /* Cover the entire container with the image */
   background-position: center; /* Center the image */
 `;
-const Icon = styled.div`
+const Icon = styled.a`
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -99,6 +101,13 @@ const Icon = styled.div`
     background-color: #e9f5f5;
     transform: scale(1.1);
   }
+`;
+
+const Script = styled.div`
+  font-size: 20px;
+  font-weight: 500;
+  color: #fbfdfb;
+  text-align: center;
 `;
 
 export default Product;

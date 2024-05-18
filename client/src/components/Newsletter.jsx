@@ -56,10 +56,20 @@ const Input = styled.input`
   padding-left: 20px;
 `;
 
-const Button = styled.button`
+const Button = styled.a`
   flex: 1;
   border: none;
   background-color: var(--primary-Button-color);
   color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: var(--secondary-Button-color);
+  }
 `;
 export default Newsletter;

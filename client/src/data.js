@@ -54,37 +54,46 @@ export const sliderItems = [
     {
       id:1,
       img: image1,
+      title : "20.000 Kişilik Sunucu için Discorda Yönlendirileceksiniz"
     },
     {
       id:2,
       img:image2,
+      title : "18.000 Kişilik Sunucu için Discorda Yönlendirileceksiniz"
     },
     {
       id:3,
       img:image3,
+      title : "15.000 Kişilik Sunucu için Discorda Yönlendirileceksiniz"
     },
     {
       id:4,
       img:image4,
+      title : "14.000 Kişilik Sunucu için Discorda Yönlendirileceksiniz"
     },
     {
       id:5,
       img:image5,
+      title : "12.000 Kişilik Sunucu için Discorda Yönlendirileceksiniz"
     },
     {
       id:6,
       img:image6,
+      title : "10.000 Kişilik Sunucu için Discorda Yönlendirileceksiniz"
     },
     {
       id:7,
       img:image7,
+      title : "8.000 Kişilik Sunucu için Discorda Yönlendirileceksiniz"
     },
     {
       id:8,
       img:image8,
+      title : "6.000 Kişilik Sunucu için Discorda Yönlendirileceksiniz"
     },
     {
       id:9,
       img:image9,
+      title : "4.000 Kişilik Sunucu için Discorda Yönlendirileceksiniz"
     },
   ]
