@@ -6,8 +6,6 @@ import Newsletter from "../components/Newsletter";
 import Products from "../components/Products";
 import Slider from "../components/Slider";
 import Shop from "../components/Shop";
-import Login from "./Login";
-import Register from "./Register";
 import "../app.css";
 
 // #0E1117, #2A2D31

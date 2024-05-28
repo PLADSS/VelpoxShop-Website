@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { mobile } from "../responsive";
+import { Link } from "react-router-dom";
 import bg01 from "../assets/bg01.png";
 import Navbar2 from "../components/Navbar2";
 import "../app.css";
@@ -57,7 +58,9 @@ const Login = () => {
               onChange={(e) => setData({ ...data, password: e.target.value })}
             />
             <Button>Giriş</Button>
-            <Link>Yeni Hesap Oluştur</Link>
+            <Link to="/register" style={{ textDecoration: "none" }}>
+              <Newaccount>Yeni Hesap Oluştur</Newaccount>
+            </Link>
           </Form>
         </Wrapper>
       </Container>
@@ -122,10 +125,10 @@ const Button = styled.button`
   margin-bottom: 10px;
 `;
 
-const Link = styled.a`
+const Newaccount = styled.a`
   margin: 5px 0px;
   font-size: 12px;
-  text-decoration: underline;
+  text-decoration: none;
   cursor: pointer;
 `;
 export default Login;

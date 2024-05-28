@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { mobile } from "../responsive";
+import { Link } from "react-router-dom";
 import Navbar2 from "../components/Navbar2";
 import bg02 from "../assets/bg02.png";
 import { useState } from "react";
@@ -80,8 +81,13 @@ const Register = () => {
             </div>
 
             <Agreement>
-              Kişisel verilerimin <b>GİZLİLİK POLİTİKASI</b>'na uygun olarak
-              işlenmesine onay veriyorum
+              Kişisel verilerimin{" "}
+              <Link to="/secret-policy" style={{ textDecoration: "none" }}>
+                <b>
+                  <SecretPolicy>GİZLİLİK POLİTİKASI</SecretPolicy>
+                </b>
+              </Link>
+              'na uygun olarak işlenmesine onay veriyorum
             </Agreement>
             <Button type="submit">Oluştur</Button>
           </Form>
@@ -148,6 +154,11 @@ const Button = styled.button`
   padding: 15px 20px;
   background-color: var(--primary-Button-color);
   color: white;
+  cursor: pointer;
+`;
+const SecretPolicy = styled.a`
+  margin-left: 5px;
+  font-weight: 600;
   cursor: pointer;
 `;
 export default Register;
